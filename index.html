@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>My Online Times</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Fondamento|Roboto" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+    <style type="text/css">
+      
+body {
+  font-family: "Fondamento", cursive;
+  background-color: rgb(235, 234, 231);
+  background-image: url("https://postimg.cc/fkmLfX1F");
+}
+
+.title {
+  font-size: 4.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 10px;
+  border-bottom: 10px double black;
+}
+
+.date {
+  font: 1em "Roboto Mono", monospace;
+  text-align: center;
+  width: 280px;
+  margin: auto;
+  margin-top: 10px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 10px;
+  border-top: 3px solid black;
+}
+
+.columns > div {
+  flex-grow: 0;
+  flex-basis: 20%;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.columns div p {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+* {
+  outline: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+
+
+
+
+main {
+  padding: 70px 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main > div {
+  margin: auto;
+  max-width: 600px;
+}
+
+main h2 span {
+  color: #BF7497;
+}
+
+main p {
+  line-height: 1.5;
+  font-weight: 200;
+  margin: 20px 0;
+}
+
+main small {
+  font-weight: 300;
+  color: #888;
+}
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
+#nav-container .bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: #000;
+  border-radius: 0;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  margin-top: -20px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #aaa;
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0,8px,0) rotate(45deg);
+}
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0,-8px,0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 70px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 70px);
+  background: #ececec;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+}
+
+#nav-content li a:hover {
+  color: #BF7497;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+.small {
+  display: flex;
+  align-self: center;
+}
+
+.small a {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+}
+.small a + a {
+  margin-left: 15px;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+img {
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  image-rendering: pixelated;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 5px 0;
+  border-top: 3px double black;
+  border-bottom: 3px double black;
+}
+
+@media only screen and (max-width: 1024px) {
+  .columns {
+    flex-direction: column;
+  }
+
+  .columns > div {
+    padding: 0 10px;
+  }
+}
+</style>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  </head>
+
+  <div class="page">
+  
+  <div id="nav-container">
+    <div class="bg"></div>
+    <div class="button" tabindex="0">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div id="nav-content" tabindex="0">
+      <ul>
+        <li><a href="#0">Home</a></li>
+        <li><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="1casey" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/1casey?trk=profile-badge" target="_blank">LinkedIn</a></div>
+              </li>
+        <li><a href="https://www.canva.com/design/DAE3p0sG2Fo/gAhUVmP8CFseplV2LTtMJw/view" target="_blank">Canva</a></li>
+        <li><a href="contact.html " target="_blank">Contact</a></li>
+        <!--<li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>-->
+      </ul>
+    </div>
+  </div>
+</div>
+    
+  <body>
+  <div class="title">My Online Times</div>
+<div class="date">Monday, November 11, 2028</div>
+
+
+<div class="columns">
+	<div>
+		<h1>Banking In Pennsylvania</h1>
+		<p>The Bank Investigating Committee, appointed by the last Legislature of the State, have made a report, exposing some of the most bold and deliberate frauds that have ever been attempted, under the color of Law. Six banks were organized and four of these were actually put into operation by a set of sharpers, most of them from Buffalo, and some from Ohio, and Indiana, without capital, and these banks had, lately an aggregate circulation of $154,515, with only $9,729 in coin. The banks are managed by a set of unscrupulous, reckless plunderers, and for the circulation the public have no security whatsoever. This is a fair specimen of the banking system adopted by the "anti-bank" politicians, of Pennsylvania, who, while standing on ant-bank platforms, and professing to be opposed to all such institutions, have legislated into life a batch of the meanest, most worthless, and villainoss "wild cat" banks, to be found any place in the United States, outside of Nebraska.</p>
+		<p>Judge Muir, - We understand that a good deal of dissatisfaction has been evinced at thecourse of Judge Muir in discharging the two men Jeffreys and Victor, who were under arrest on killing Allen in Friday night. This dissatisfaction againsta Judge M. arises when we are satisfied from a missapprehension of the facts in the case. </p>
+		<img src="https://postimg.cc/S2zK5zRQ">
+	</div>
+	<div>
+		<h1>The Democratic Organs Have Done Their Best</h1>
+		<p>They attempted to make party capital out of the affray on Friday night last, in which a man named Tom Allen was killed. To read their remarks, a stranger would be lead to suppose that Allen was a martyr to political persecution, that be was a citizen of spotless fame and immaculate virtue and had died in defending the cause of his country, and his murder has been openly  countepanced and excused by the legal authorities of the State and city. All these suppositions are as devoid of truth as the innermost chamber of the Mammoth Cave is of sunlight. There is not the faintest glimmer, or shadow of truth in them, and the organs that are trying to make political capital out of the occurence know it full well.</p>
+		<img src="https://postimg.cc/N26jGq19">
+		<p>In this case the statements of the Democratic organs themselves exonerated the officers from any blame whatsoever. The efforts of the Democratoc organs are exceedingly reprehensible. They are productive of no good whatsoever to their party and tend only to excite bad feeling and create serious difficulties.</p>
+		<p>A hallmark of the Donkey Kong franchise is barrels, which the Kongs use as weapons, vehicles, furniture, and lodging. The Donkey Kong character is highly recognizable and very popular; the franchise has sold over 40 million units worldwide.</p>
+	</div>
+	<div>
+		<h1>Lorem Ipsum</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<img src="https://postimg.cc/23h67vgH">
+	</div>
+</div>
+<div class="footer">My Online Times</div>
+    
+  </body>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</html>
